@@ -2,7 +2,6 @@ pipeline {
     agent any (lable 'main')
 
     stages {
-
         stage(code pull) {
             steps {
                 git branch: 'master' , url: 'https://github.com/github6472/arepo.git'
