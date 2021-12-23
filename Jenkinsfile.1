@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+        stage(docker start) {
+            steps {
+                docker start nano_1
+            }
+        }
+        stage(docker execute ) {
+            steps {
+                docker exec -it nano_1 /bin/bash
+            }
+        }
+        stage(back to machine) {
+            steps {
+                exit
+            }
+        }
+    }
+    
+}
+
