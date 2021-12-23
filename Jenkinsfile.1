@@ -2,6 +2,12 @@ pipeline {
     agent any
 
     stages {
+
+        stage(code pull) {
+            steps {
+                git branch: 'master' , url: 'https://github.com/github6472/arepo.git'
+            }
+        }
         stage(docker start) {
             steps {
                 docker start nano_1
